@@ -72,7 +72,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: dockersddp/fastapi:${{ github.sha }}
+          tags: dockersddp/naveen-mlops:fastapi-${{ github.sha }}
           context: "."
           file: "Dockerfile"
 
