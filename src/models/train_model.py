@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib
 import mlflow
+import os
 import mlflow.sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, r2_score
@@ -56,6 +57,8 @@ def main(args):
     model_cfg = config['model']
 
     if args.mlflow_tracking_uri:
+        os.environ["MLFLOW_TRACKING_USERNAME"] = "admin"
+        os.environ["MLFLOW_TRACKING_PASSWORD"] = "AdminPassword_2025!"
         mlflow.set_tracking_uri(args.mlflow_tracking_uri)
         mlflow.set_experiment(model_cfg['name'])
 
